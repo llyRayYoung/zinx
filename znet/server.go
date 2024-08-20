@@ -15,7 +15,6 @@ import (
 
 	"github.com/gorilla/websocket"
 
-	"github.com/aceld/zinx/logo"
 	"github.com/aceld/zinx/zconf"
 	"github.com/aceld/zinx/zdecoder"
 	"github.com/aceld/zinx/zlog"
@@ -125,8 +124,6 @@ type KcpConfig struct {
 // newServerWithConfig creates a server handle based on config
 // (根据config创建一个服务器句柄)
 func newServerWithConfig(config *zconf.Config, ipVersion string, opts ...Option) ziface.IServer {
-	logo.PrintLogo()
-
 	s := &Server{
 		Name:             config.Name,
 		IPVersion:        ipVersion,
