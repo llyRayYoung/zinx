@@ -5,7 +5,7 @@
  **/
 package zinterceptor
 
-import "github.com/aceld/zinx/ziface"
+import "github.com/llyRayYoung/zinx/ziface"
 
 type Chain struct {
 	req          ziface.IcReq

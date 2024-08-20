@@ -7,9 +7,9 @@
 package main
 
 import (
-	"github.com/aceld/zinx/ziface"
-	"github.com/aceld/zinx/zlog"
-	"github.com/aceld/zinx/znet"
+	"github.com/llyRayYoung/zinx/ziface"
+	"github.com/llyRayYoung/zinx/zlog"
+	"github.com/llyRayYoung/zinx/znet"
 )
 
 // ping test 自定义路由

@@ -12,7 +12,7 @@ https://github.com/aceld/mmo_game_client
 
   The game scenario is an MMO (Massively Multiplayer Online) game with a Unity3D client. The server-side demo implements essential modules of an MMO game, including AOI (Area Of Interest) based broadcasting and global chat.
 
-![mmo-game01](https://github.com/aceld/zinx/assets/7778936/b9576a95-d33f-4ffd-bf89-94a551af1977)
+![mmo-game01](https://github.com/llyRayYoung/zinx/assets/7778936/b9576a95-d33f-4ffd-bf89-94a551af1977)
 
 ## 2.Server Application Basic Protocols
 
@@ -28,7 +28,7 @@ https://github.com/aceld/mmo_game_client
 
 ## 3. Zinx Documentation
 
-[ < Zinx Wiki : English > ](https://github.com/aceld/zinx/wiki)
+[ < Zinx Wiki : English > ](https://github.com/llyRayYoung/zinx/wiki)
 
 [ < Zinx 文档 : 简体中文> ](https://www.yuque.com/aceld/tsgooa/sbvzgczh3hqz8q3l)
 

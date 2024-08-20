@@ -4,9 +4,9 @@ import (
 	"math"
 	"sync"
 
-	"github.com/aceld/zinx/zconf"
-	"github.com/aceld/zinx/ziface"
-	"github.com/aceld/zinx/zpack"
+	"github.com/llyRayYoung/zinx/zconf"
+	"github.com/llyRayYoung/zinx/ziface"
+	"github.com/llyRayYoung/zinx/zpack"
 )
 
 const (

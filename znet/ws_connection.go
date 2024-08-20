@@ -9,11 +9,11 @@ import (
 	"sync"
 	"time"
 
-	"github.com/aceld/zinx/zconf"
-	"github.com/aceld/zinx/ziface"
-	"github.com/aceld/zinx/zinterceptor"
-	"github.com/aceld/zinx/zlog"
-	"github.com/aceld/zinx/zpack"
+	"github.com/llyRayYoung/zinx/zconf"
+	"github.com/llyRayYoung/zinx/ziface"
+	"github.com/llyRayYoung/zinx/zinterceptor"
+	"github.com/llyRayYoung/zinx/zlog"
+	"github.com/llyRayYoung/zinx/zpack"
 	"github.com/gorilla/websocket"
 )
 

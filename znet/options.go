@@ -1,6 +1,6 @@
 package znet
 
-import "github.com/aceld/zinx/ziface"
+import "github.com/llyRayYoung/zinx/ziface"
 
 // Options for Server
 // (Server的服务Option)

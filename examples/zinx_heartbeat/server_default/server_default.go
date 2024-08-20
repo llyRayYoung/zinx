@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/aceld/zinx/znet"
+	"github.com/llyRayYoung/zinx/znet"
 	"time"
 )
 

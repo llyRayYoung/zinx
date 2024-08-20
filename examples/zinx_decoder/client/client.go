@@ -8,9 +8,9 @@ import (
 	"os/signal"
 	"time"
 
-	"github.com/aceld/zinx/ziface"
-	"github.com/aceld/zinx/zlog"
-	"github.com/aceld/zinx/znet"
+	"github.com/llyRayYoung/zinx/ziface"
+	"github.com/llyRayYoung/zinx/zlog"
+	"github.com/llyRayYoung/zinx/znet"
 )
 
 // Use this method to generate mock data. (使用该方法生成模拟数据)

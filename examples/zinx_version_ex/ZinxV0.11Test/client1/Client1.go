@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/aceld/zinx/zpack"
+	"github.com/llyRayYoung/zinx/zpack"
 	"io"
 	"net"
 	"time"
