@@ -406,15 +406,20 @@ func (c *Connection) SendMsg(msgID uint32, data []byte) error {
 		return errors.New("connection closed when send msg")
 	}
 	// Pack data and send it
-	msg, err := c.packet.Pack(zpack.NewMsgPackage(msgID, data))
-	if err != nil {
-		zlog.Ins().ErrorF("Pack error msg ID = %d", msgID)
-		return errors.New("Pack error msg ")
+	msg := zpack.NewMsgPackage(msgID, data)
+	if c.packet != nil {
+		bytes, err := c.packet.Pack(msg)
+		if err != nil {
+			zlog.Ins().ErrorF("Pack error msg ID = %d", msgID)
+			return errors.New("Pack error msg ")
+		}
+		data = bytes
+	} else {
+		data = msg.GetData()
 	}
-
-	err = c.Send(msg)
+	err := c.Send(data)
 	if err != nil {
-		zlog.Ins().ErrorF("SendMsg err msg ID = %d, data = %+v, err = %+v", msgID, string(msg), err)
+		zlog.Ins().ErrorF("SendMsg err msg ID = %d, data = %+v, err = %+v", msgID, string(data), err)
 		return err
 	}
 
