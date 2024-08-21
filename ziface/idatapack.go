@@ -19,6 +19,7 @@ const (
 
 	//...(+)
 	//// Custom packing method can be added here(自定义封包方式在此添加)
+	ZinxDataPackJson string = "zinx_pack_json"
 )
 
 const (
