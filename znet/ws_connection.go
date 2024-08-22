@@ -9,12 +9,12 @@ import (
 	"sync"
 	"time"
 
+	"github.com/gorilla/websocket"
 	"github.com/llyRayYoung/zinx/zconf"
 	"github.com/llyRayYoung/zinx/ziface"
 	"github.com/llyRayYoung/zinx/zinterceptor"
 	"github.com/llyRayYoung/zinx/zlog"
 	"github.com/llyRayYoung/zinx/zpack"
-	"github.com/gorilla/websocket"
 )
 
 // WsConnection is a module for handling the read and write operations of a WebSocket connection.
@@ -344,7 +344,7 @@ func (c *WsConnection) Send(data []byte) error {
 		return errors.New("WsConnection closed when send msg")
 	}
 
-	err := c.conn.WriteMessage(websocket.BinaryMessage, data)
+	err := c.conn.WriteMessage(websocket.TextMessage, data)
 	if err != nil {
 		zlog.Ins().ErrorF("SendMsg err data = %+v, err = %+v", data, err)
 		return err
@@ -404,7 +404,7 @@ func (c *WsConnection) SendMsg(msgID uint32, data []byte) error {
 	}
 
 	// Write back to the client
-	err = c.conn.WriteMessage(websocket.BinaryMessage, msg)
+	err = c.conn.WriteMessage(websocket.TextMessage, msg)
 	if err != nil {
 		zlog.Ins().ErrorF("SendMsg err msg ID = %d, data = %+v, err = %+v", msgID, string(msg), err)
 		return err
