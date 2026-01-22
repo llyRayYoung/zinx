@@ -218,6 +218,7 @@ func (c *WsConnection) StartReader() {
 			// (从conn的IO中读取数据到内存缓冲buffer中)
 			messageType, buffer, err := c.conn.ReadMessage()
 			if err != nil {
+				zlog.Ins().ErrorF("read msg error = %s", err.Error())
 				c.cancel()
 				return
 			}
@@ -230,7 +231,7 @@ func (c *WsConnection) StartReader() {
 				zlog.Ins().ErrorF("read msg head [read datalen=%d], error = %s", n, err.Error())
 				return
 			}
-			zlog.Ins().DebugF("read buffer %s \n", hex.EncodeToString(buffer[0:n]))
+			zlog.Ins().DebugF("read buffer %s \n", string(buffer[0:n]))
 
 			// Update the Active status of heartbeat detection normally after reading data from the peer.
 			// (正常读取到对端数据，更新心跳检测Active状态)
@@ -409,7 +410,7 @@ func (c *WsConnection) SendMsg(msgID uint32, data []byte) error {
 		zlog.Ins().ErrorF("SendMsg err msg ID = %d, data = %+v, err = %+v", msgID, string(msg), err)
 		return err
 	}
-
+	zlog.Ins().DebugF("SendMsg ID = %d, data = %v", msgID, string(msg))
 	return nil
 }
 

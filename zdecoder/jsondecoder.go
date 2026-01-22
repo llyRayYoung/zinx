@@ -25,6 +25,16 @@ func (j *JsonDecoder) decode(data []byte) (*JsonDecoder, error) {
 	if err != nil {
 		return nil, err
 	}
+	if jsonMsg.MsgID == 0 {
+		err = json.Unmarshal([]byte(jsonMsg.Data), jsonMsg)
+		if err != nil {
+			return nil, err
+		}
+		return &JsonDecoder{
+			Tag:   jsonMsg.MsgID,
+			Value: []byte(jsonMsg.Data),
+		}, nil
+	}
 	return &JsonDecoder{
 		Tag:   jsonMsg.MsgID,
 		Value: []byte(jsonMsg.Data),
