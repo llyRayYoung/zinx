@@ -347,10 +347,10 @@ func (c *WsConnection) Send(data []byte) error {
 
 	err := c.conn.WriteMessage(websocket.TextMessage, data)
 	if err != nil {
-		zlog.Ins().ErrorF("SendMsg err data = %+v, err = %+v", data, err)
+		zlog.Ins().ErrorF("SendMsg err data = %+v, err = %+v", string(data), err)
 		return err
 	}
-
+	zlog.Ins().DebugF("SendMsg [id=%d] [len=%d] [data=%+v]", c.GetConnID(), len(data), string(data))
 	return nil
 }
 
